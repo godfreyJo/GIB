@@ -41,8 +41,8 @@ public class user_home_deposit extends AppCompatActivity implements View.OnClick
     {
         int registrationNo = Integer.parseInt(getIntent().getStringExtra("registrationNo"));
         final Customer customer = db.selectCustomer(registrationNo);
-        EditText depositAmountEdittext = (EditText)findViewById(R.id.user_deposit_amount);
-        String  amountString = depositAmountEdittext.getText().toString();
+        EditText depositAmountEditText = (EditText)findViewById(R.id.user_deposit_amount);
+        String  amountString = depositAmountEditText.getText().toString();
         if (Double.parseDouble(amountString) == 0.0 || Double.parseDouble(amountString) > 1000000.0)                                            //Check if zero or 0.00....0 or greater than 1M
         {
             customToast("Number too big or too small.");

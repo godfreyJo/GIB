@@ -37,7 +37,7 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v)
     {
         int registrationNo = Integer.parseInt(
-                getIntent().getStringExtra("regstrationNo"));
+                getIntent().getStringExtra("registrationNo"));
         switch (v.getId())
         {
             case R.id.transaction:
@@ -51,9 +51,9 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
                 startActivityForResult(deposit, 1);
                 break;
             case R.id.transaction_history:
-                Intent transcation_history = new Intent(this, user_home_transaction_history.class);
-                transcation_history.putExtra("registrationNo", Integer.toString(registrationNo));
-                startActivity(transcation_history);
+                Intent transaction_history = new Intent(this, user_home_transaction_history.class);
+                transaction_history.putExtra("registrationNo", Integer.toString(registrationNo));
+                startActivity(transaction_history);
                 break;
             case R.id.changeName:
                 Intent changeName = new Intent(this, user_home_change_name.class);
