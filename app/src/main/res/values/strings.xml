@@ -4,6 +4,7 @@
     <string name="welcome_to">Welcome to</string>
     <string name="user_register">User Register</string>
     <string name="employee_login">Employee Login</string>
+    <string name="social_signup">Social Sign Up</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="name">Name</string>
@@ -23,6 +24,6 @@
     <string name="registrationNo">registrationNo</string>
     <string name="userList">User List</string>
     <string name="resetPAC">Reset PAC</string>
-    <string name="PAC">PAC</string>
+    <string name="PAC">Personal Account</string>
     <string name="copyright">Gody©</string>
 </resources>
