@@ -2,9 +2,14 @@
     <string name="app_name">GIB</string>
     <string name="user_login">User Login</string>
     <string name="welcome_to">Welcome to</string>
+    <string name="Social_signUp">Sign Up with</string>
     <string name="user_register">User Register</string>
     <string name="employee_login">Employee Login</string>
-    <string name="social_signup">Social Sign Up</string>
+    <string name="social_signUp">Social Sign Up</string>
+    <string name="signUp">Sign Up</string>
+    <string name="Gmail_signUp">Sign Up with Gmail</string>
+    <string name="Facebook_signUp">Sign Up with Facebook</string>
+    <string name="twitter_signUp">Sign Up with Twitter</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="name">Name</string>
