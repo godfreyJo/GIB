@@ -90,6 +90,6 @@
         android:textSize="15sp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_below="@+id/Sign_Up_with_Gmail"
+        android:layout_below="@+id/Sign_Up_with_Facebook"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
