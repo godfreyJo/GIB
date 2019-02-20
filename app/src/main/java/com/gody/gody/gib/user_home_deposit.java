@@ -40,9 +40,13 @@ public class user_home_deposit extends AppCompatActivity implements View.OnClick
     public void onClick(View v)
     {
         int registrationNo = Integer.parseInt(getIntent().getStringExtra("registrationNo"));
+
         final Customer customer = db.selectCustomer(registrationNo);
+
         EditText depositAmountEditText = (EditText)findViewById(R.id.user_deposit_amount);
+
         String  amountString = depositAmountEditText.getText().toString();
+
         if (Double.parseDouble(amountString) == 0.0 || Double.parseDouble(amountString) > 1000000.0)                                            //Check if zero or 0.00....0 or greater than 1M
         {
             customToast("Number too big or too small.");
@@ -67,7 +71,7 @@ public class user_home_deposit extends AppCompatActivity implements View.OnClick
 
 
                     String title    = "Your deposit has been completed.";
-                    String message  = "You have deposited €" + Double.toString(amount);
+                    String message  = "You have deposited KES" + Double.toString(amount);
                     String ok       = "OK";
 
                     AlertDialog alertDialog = new AlertDialog.Builder(this).create();   //Inform user of login credentials

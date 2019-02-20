@@ -20,8 +20,7 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
-        int registrationNo = Integer.parseInt(
-                getIntent().getStringExtra("registrationNo"));
+        int registrationNo = Integer.parseInt(getIntent().getStringExtra("registrationNo"));
         Customer customer = db.selectCustomer(registrationNo);
         initScreen(customer.getName(), customer.getBalance());
         textStyle();
@@ -76,15 +75,19 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
     }
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
 
-    protected void onAvtivityResult(int requestCode, int resultCode, Intent data)
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         if(requestCode==1)
         {
             if(requestCode== Activity.RESULT_OK)
             {
-                String newText = data.getStringExtra("balance");
-                String welcome_balance = "Balance: KES" + newText;
-                TextView TextView_welcome_balance = (TextView)findViewById(R.id.balance);
+                String newText = data.getStringExtra("balance ");
+
+                String welcome_balance = "Balance: KES " + newText;
+
+                TextView TextView_welcome_balance = findViewById(R.id.balance);
+
+                TextView_welcome_balance.setText(welcome_balance);
             }
         }
         else if(requestCode==2)

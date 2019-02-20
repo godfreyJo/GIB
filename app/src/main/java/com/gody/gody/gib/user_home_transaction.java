@@ -43,8 +43,8 @@ public class user_home_transaction extends AppCompatActivity implements View.OnC
 
         final Customer customer           = db.selectCustomer(registrationNo);                  //Get current user
 
-        EditText receiverEditText   = (EditText)findViewById(R.id.user_transaction_receiver);
-        EditText amountEditText     = (EditText)findViewById(R.id.user_transaction_amount);
+        EditText receiverEditText   = findViewById(R.id.user_transaction_receiver);
+        EditText amountEditText     = findViewById(R.id.user_transaction_amount);
 
         String receiverString       = receiverEditText.getText().toString();
         String amountString         = amountEditText.getText().toString();
