@@ -11,8 +11,8 @@ import java.util.List;
 //This is a custom adapter for generating customer list for employees
 
 public class userListAdapter extends ArrayAdapter<Customer> {
-    public userListAdapter(Context context, int resource, List<Customer> userList) {
-        super(context, resource);
+    public userListAdapter(Context context, int resource, List<Customer> customers) {
+        super(context, resource, customers);
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent)                       //Creates a ListView item
