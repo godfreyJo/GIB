@@ -32,7 +32,7 @@ public class UserTransactionAdapter extends ArrayAdapter<Transaction>
             {
                 TextView tt1 = v.findViewById(R.id.transactionListSender);
                 TextView tt2 = v.findViewById(R.id.transactionListReceiver);
-                TextView tt3 = v.findViewById(R.id.user_transaction_amount);
+                TextView tt3 = v.findViewById(R.id.transactionListAmount);
                 boolean deposit = false;
 
                 if (tt1 !=null)
@@ -67,7 +67,8 @@ public class UserTransactionAdapter extends ArrayAdapter<Transaction>
                             String receiver = Integer.toString(transaction.getReceiver());
                             tt3.setText(receiver);
                         }
-                } if (tt3 != null)
+                }
+                if (tt3 != null)
                 {
                     String amount = "KES" + Double.toString(transaction.getAmount());
                     tt3.setText(amount);

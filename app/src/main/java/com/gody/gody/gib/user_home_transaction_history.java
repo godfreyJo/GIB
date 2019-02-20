@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -44,14 +45,16 @@ public class user_home_transaction_history extends AppCompatActivity
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void createListView()
     {
-        final ListView listView = (ListView)findViewById(R.id.list);
+        final ListView listView = findViewById(R.id.list); // create ListView
 
-        int registrationNo = Integer.parseInt(getIntent().getStringExtra("registrationNo"));
-        final Customer user =db.selectCustomer(registrationNo);
-        final List<Transaction> transactionList = db.allTransactions(registrationNo);
+        int registrationNo = Integer.parseInt(getIntent().getStringExtra("registrationNo")); //Get registration sent from parent
+
+        final Customer user = db.selectCustomer(registrationNo); //get current user
+
+        final List<Transaction> transactionList = db.allTransactions(registrationNo); //get all transactions from the Database
         transactionList.add(0, new Transaction());
 
-        if (transactionList.size()==0)
+        if (transactionList.size()==0) //if there are no transactions
         {
             ListAdapter customerAdapter = new UserTransactionAdapter(this, R.layout.customerlistrow, transactionList);
             listView.setAdapter(customerAdapter);
@@ -80,7 +83,7 @@ public class user_home_transaction_history extends AppCompatActivity
                                 String popupText;
                                 Date date = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss", Locale.ENGLISH).parse(transactionList.get(position).getDate());
 
-                                popupText = "FROM: \t " + user.getName() + "\n To: \t\t\t" +  db.selectCustomer(transactionList.get(position).getReceiver()).getName()+
+                                popupText = "FROM: \t " + user.getName() + "\nTo: \t\t\t" +  db.selectCustomer(transactionList.get(position).getReceiver()).getName()+
                                 "\nAmount: \tKES" + Double.toString(transactionList.get(position).getAmount()) + "\n Date: \t\t" + date.toString();
 
                                 String title = "Transaction";
@@ -91,7 +94,7 @@ public class user_home_transaction_history extends AppCompatActivity
                                 alertDialog.setMessage(popupText);
                                 alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, ok, new DialogInterface.OnClickListener()
                                     {
-                                    @Override
+
                                     public void onClick(DialogInterface dialog, int which)
                                     {
                                         dialog.dismiss();
@@ -115,7 +118,7 @@ public class user_home_transaction_history extends AppCompatActivity
                         }
                         catch(Exception e)
                         {
-                            customToast("unavle to load Transaction details");
+                            customToast("unable to load Transaction details");
                         }
                     }
 
@@ -146,7 +149,7 @@ public class user_home_transaction_history extends AppCompatActivity
     private void textStyles()
     {
         // Find Elements
-        TextView welcome_to_textview    = (TextView)findViewById(R.id.home_sib);
+        TextView welcome_to_textview    = findViewById(R.id.home_sib);
 
         // Find fonts
         Typeface face=Typeface.createFromAsset(getAssets(),"fonts/CaviarDreams.ttf");
