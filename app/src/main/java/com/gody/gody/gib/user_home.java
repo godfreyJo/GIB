@@ -131,8 +131,8 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
     {}
     public void initScreen(String name, double balance)
     {
-        String welcome_name                 = "welcome" + name + ".";
-        String welcome_balance              = "Balance: KES" + Double.toString(balance);
+        String welcome_name                 = "Welcome" + name + ".";
+        String welcome_balance              = "Balance: KES " + Double.toString(balance);
         TextView TextView_welcome_text      =  (TextView)findViewById(R.id.home_sib);
         TextView TextView_welcome_balance   = (TextView)findViewById(R.id.balance);
 
