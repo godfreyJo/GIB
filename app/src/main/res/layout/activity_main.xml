@@ -79,17 +79,5 @@
         android:layout_below="@+id/user_register"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/social_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:background="@drawable/main_page_buttons"
-        android:text="@string/social_signUp"
-        android:textColor="#fff"
-        android:textSize="15sp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_below="@+id/employee_login"
-        android:layout_centerHorizontal="true" />
+    
 </RelativeLayout>
