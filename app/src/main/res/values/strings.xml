@@ -7,10 +7,7 @@
     <string name="employee_login">Employee Login</string>
     <string name="social_signUp">Social Sign Up</string>
     <string name="signUp">Sign Up</string>
-    <string name="Gmail_signUp">Sign Up with Gmail</string>
-    <string name="Facebook_signUp">Sign Up with Facebook</string>
-    <string name="twitter_signUp">Sign Up with Twitter</string>
-    <string name="login">Login</string>
+        <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="name">Name</string>
     <string name="transaction">Transaction</string>
@@ -19,6 +16,7 @@
     <string name="changeName">Change Name</string>
     <string name="deleteAccount">Delete Account</string>
     <string name="logout">Logout</string>
+    <string name="calender">Calender</string>
     <string name="transfer">Transfer</string>
     <string name="transactions">Transactions</string>
     <string name="password">Password</string>
