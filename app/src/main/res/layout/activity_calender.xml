@@ -13,8 +13,8 @@
         android:layout_height="fill_parent"
         android:firstDayOfWeek="2"
         android:textColor="@android:color/white"
-        android:maxDate="01/01/2019"
-        android:minDate="01/01/2016" />
+        android:maxDate="01/01/2030"
+        android:minDate="01/01/2017" />
 
 
 </android.support.constraint.ConstraintLayout>
