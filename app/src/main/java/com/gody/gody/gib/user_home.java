@@ -63,6 +63,11 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
                 Intent deleteAccount = new Intent(this, user_home_delete_account.class);
                 deleteAccount.putExtra("registrationNo", Integer.toString(registrationNo));
                 startActivityForResult(deleteAccount,3);
+
+            case R.id.calender:
+                Intent calender = new Intent(this, calender.class);
+                calender.putExtra("registrationNo", Integer.toString(registrationNo));
+                startActivityForResult(calender,3);
                 break;
             case R.id.logout:
                 db.close();
@@ -167,6 +172,7 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
         transactionHistory.setTypeface(face);
         changeName.setTypeface(face);
         deleteAccount.setTypeface(face);
+        calender.setTypeface(face);
         logout.setTypeface(face);
     }
 
