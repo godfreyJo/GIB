@@ -129,8 +129,10 @@
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
+
+
             <Button
-                android:id="@+id/logout"
+                android:id="@+id/calender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/deleteAccount"
@@ -141,27 +143,31 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/main_page_buttons"
-                android:paddingLeft="10dp"
+                android:paddingLeft="13dp"
                 android:paddingRight="10dp"
-                android:text="@string/logout"
+                android:text="@string/calender"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/calender"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/logout"
-                android:layout_alignStart="@+id/logout"
-                android:layout_alignLeft="@+id/logout"
-                android:layout_alignEnd="@+id/logout"
-                android:layout_alignRight="@+id/logout"
-                android:layout_marginTop="10dp"
+                android:layout_below="@+id/calender"
+                android:layout_alignStart="@+id/calender"
+                android:layout_alignLeft="@+id/calender"
+                android:layout_alignEnd="@+id/calender"
+                android:layout_alignRight="@+id/calender"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/main_page_buttons"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="@string/calender"
+                android:text="@string/logout"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 

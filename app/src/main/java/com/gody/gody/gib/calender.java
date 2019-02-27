@@ -26,6 +26,8 @@ public class calender extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+        textStyles();
+        setClickListeners();
 
         simpleCalendarView = (CalendarView) findViewById(R.id.simpleCalendarView); // get the reference of CalendarView
         simpleCalendarView.setFocusedMonthDateColor(Color.RED); // set the red color for the dates of  focused month
@@ -41,6 +43,15 @@ public class calender extends AppCompatActivity {
             }
         });
     }
+
+    private void textStyles()
+    {
+
     }
+    private void setClickListeners()
+    {
+
+    }
+}
 
 

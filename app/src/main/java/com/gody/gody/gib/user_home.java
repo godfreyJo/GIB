@@ -151,6 +151,7 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
         Button transactionHistory   =(Button)findViewById(R.id.transaction_history);
         Button changeName           =(Button)findViewById(R.id.changeName);
         Button deleteAccount        =(Button)findViewById(R.id.deleteAccount);
+        Button calender             =(Button)findViewById(R.id.calender);
         Button logout               =(Button)findViewById(R.id.logout);
 
         // Find font
@@ -176,6 +177,7 @@ public class user_home extends AppCompatActivity implements View.OnClickListener
         findViewById(R.id.transaction_history).setOnClickListener(this);
         findViewById(R.id.changeName).setOnClickListener(this);
         findViewById(R.id.deleteAccount).setOnClickListener(this);
+        findViewById(R.id.calender).setOnClickListener(this);
         findViewById(R.id.logout).setOnClickListener(this);
     }
 
