@@ -8,8 +8,9 @@
     <string name="employee_login">Employee Login</string>
     <string name="social_signUp">Social Sign Up</string>
     <string name="signUp">Sign Up</string>
-        <string name="login">Login</string>
+    <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="e_register">Employee Register</string>
     <string name="name">Name</string>
     <string name="transaction">Transaction</string>
     <string name="deposit">Deposit</string>
@@ -26,6 +27,7 @@
     <string name="sender">Sender</string>
     <string name="amount">Amount</string>
     <string name="registrationNo">registrationNo</string>
+    <string name="e_registrationNo">Emp_registrationNo</string>
     <string name="userList">User List</string>
     <string name="resetPAC">Reset PAC</string>
     <string name="PAC">Personal Account</string>
