@@ -11,7 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".employee_register"></activity>
         <activity android:name=".calender" />
-        <activity android:name=".calendar" />
         <activity android:name=".user_home_transaction" />
         <activity android:name=".user_home_transaction_history" />
         <activity android:name=".user_home_deposit" />
