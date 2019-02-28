@@ -15,7 +15,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper
 {
     public static int registrationNo            = 1;                                             //Keep track of registrationNo for register screen
-    public static int e_registrationNo            = 1;
+    public static int employeeNo            = 1;
     private static final String DATABASE_NAME   = "SIB.db";
     private static final String[] TABLE_NAMES = {"`customer`", "`transaction`", "`employee`"};
     private static final String[][] TABLE_COLUMNS = {
@@ -288,33 +288,33 @@ public class Database extends SQLiteOpenHelper
         db.delete(TABLE_NAMES[1], null, null);
         db.delete(TABLE_NAMES[2], null, null);
 
-        registrationNo = 0;
+        employeeNo = 0;
     }
-    public int insertEmployee(int PAC, String name, double balance)                             //Inserts customer into customer table
+    public int insertEmployee(int password, String name, double balance)                             //Inserts customer into customer table
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        if (this.e_registrationNo == 1)
+        if (this.employeeNo == 1)
         {
-            String query = "SELECT max(e_registrationNo) as max FROM " + TABLE_NAMES[0];
+            String query = "SELECT max(employeeNo) as max FROM " + TABLE_NAMES[0];
             Cursor result = db.rawQuery(query, null);
             if (result.moveToFirst())
             {
-                this.e_registrationNo = result.getInt(result.getColumnIndex("max"));
+                this.employeeNo = result.getInt(result.getColumnIndex("max"));
             }
             else
             {
-                this.e_registrationNo = 1;
+                this.employeeNo = 1;
             }
         }
 
         ContentValues values = new ContentValues();
-        values.put("PAC", PAC);
+        values.put("password", password);
         values.put("name", name);
         values.put("balance", balance);
         db.insert(TABLE_NAMES[0], null, values);
 
-        return ++e_registrationNo;
+        return ++employeeNo;
     }
 
 
