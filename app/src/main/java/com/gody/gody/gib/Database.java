@@ -290,7 +290,7 @@ public class Database extends SQLiteOpenHelper
 
         employeeNo = 0;
     }
-    public int insertEmployee(int password, String name, double balance)                             //Inserts customer into customer table
+    public int insertEmployee(int PAC, String name, double balance)                             //Inserts customer into customer table
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -309,7 +309,7 @@ public class Database extends SQLiteOpenHelper
         }
 
         ContentValues values = new ContentValues();
-        values.put("password", password);
+        values.put("PAC", PAC);
         values.put("name", name);
         values.put("balance", balance);
         db.insert(TABLE_NAMES[0], null, values);
