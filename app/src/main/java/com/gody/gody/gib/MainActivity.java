@@ -37,9 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent myIntent2 = new Intent(this, user_register.class);
                 startActivityForResult(myIntent2, 2);
                 break;
-            case R.id.employee_login:
-                Intent myIntent3 = new Intent(this, employee_login.class);
+            case R.id.employee_register:
+                Intent myIntent3 = new Intent(this, employee_register.class);
                 startActivityForResult(myIntent3, 3);
+                break;
+            case R.id.employee_login:
+                Intent myIntent4 = new Intent(this, employee_login.class);
+                startActivityForResult(myIntent4, 4);
                 break;
 
         }
@@ -66,6 +70,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(myIntent, 1);
             }
         }
+        else if(requestCode == 3)
+        {
+            if(resultCode == Activity.RESULT_OK)
+            {
+                Intent home = new Intent(this, employee_login.class);
+                String newText = data.getStringExtra("employeeNo");
+                home.putExtra("employeeNo", newText);
+                startActivity(home);
+            }
+        }
         else
         {
             if(resultCode == Activity.RESULT_OK)
@@ -81,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setClickListener()
     {
         findViewById(R.id.home_user_login).setOnClickListener(this);
+        findViewById(R.id.employee_register).setOnClickListener(this);
         findViewById(R.id.user_register).setOnClickListener(this);
         findViewById(R.id.employee_login).setOnClickListener(this);
     }
@@ -91,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView welcome_to_textview    =(TextView)findViewById(R.id.home_welcome_to);
         TextView sib_textview           =(TextView)findViewById(R.id.home_sib);
         Button user_login_button        =(Button)findViewById(R.id.home_user_login);
+        Button employee_register_button     =(Button)findViewById(R.id.employee_register);
         Button user_register_button     =(Button)findViewById(R.id.user_register);
         Button employee_login_button    =(Button)findViewById(R.id.employee_login);
 
@@ -101,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         welcome_to_textview.setTypeface(face);
         sib_textview.setTypeface(face);
         user_login_button.setTypeface(face);
+        employee_register_button.setTypeface(face);
         user_register_button.setTypeface(face);
         employee_login_button.setTypeface(face);
     }

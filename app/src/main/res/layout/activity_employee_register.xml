@@ -39,7 +39,7 @@
         android:textCursorDrawable="@drawable/blinking_cursor_colour" />
 
     <Button
-        android:id="@+id/employee_register"
+        android:id="@+id/btn_employee_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/employee_register_name"

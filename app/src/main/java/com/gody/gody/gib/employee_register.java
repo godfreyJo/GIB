@@ -34,15 +34,15 @@ public class employee_register extends AppCompatActivity implements View.OnClick
 
     private void setClickListeners()
     {
-        findViewById(R.id.employee_register).setOnClickListener(this);
+        findViewById(R.id.btn_employee_register).setOnClickListener(this);
     }
 
     private void textStyles()
     {
         // Find Element
-        TextView sib_textview   = (TextView)findViewById(R.id.home_sib);
-        Button login            = (Button)findViewById(R.id.customer_register);
-        EditText name           = (EditText)findViewById(R.id.user_register_name);
+        TextView sib_textview   = (TextView)findViewById(R.id.e_home_sib);
+        Button login            = (Button)findViewById(R.id.btn_employee_register);
+        EditText name           = (EditText)findViewById(R.id.employee_register_name);
 
         // Find fonts
         Typeface caviarDreams   =  Typeface.createFromAsset(getAssets(),"fonts/CaviarDreams.ttf");
@@ -63,49 +63,53 @@ public class employee_register extends AppCompatActivity implements View.OnClick
         if (TextUtils.isEmpty(name)) {
             customToast("Please Enter your name.");
         } else {
-            if (name.length() > 25) {
-                customToast("this name is too long");
+            if (!name.matches("[a-zA-Z\\s.]*")) {
+                customToast("Please only enter letters.");
             } else {
-                SecureRandom random = new SecureRandom();
-                String PACString = Integer.toString(random.nextInt());
-                PACString = PACString.substring(PACString.length() - 4); //generate cryptographically random number
-                int PAC = Integer.parseInt(PACString);
+                if (name.length() > 25) {
+                    customToast("this name is too long");
+                } else {
+                    SecureRandom random = new SecureRandom();
+                    String password = Integer.toString(random.nextInt());
+                    password = password.substring(password.length() - 4); //generate cryptographically random number
+                    int PAC = Integer.parseInt(password);
 
-                int e_registrationNo = db.insertEmployee(PAC, name, 0);
+                    int employeeNo = db.insertEmployee(PAC, name, 0);
 
-                String title = "Your Login credentials";
-                String message = "RegistrationNo: " + e_registrationNo + "\n" +
-                        "PAC:  " + PACString + ".\n\n Please note dow your login information. ";
-                String login = "Login";
+                    String title = "Your Login credentials";
+                    String message = "EmployeeNo: " + employeeNo+ "\n" +
+                            "password:  " + password + ".\n\n Please note dow your login information. ";
+                    String login = "Login";
 
-                AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-                alertDialog.setTitle(title);
-                alertDialog.setMessage(message);
+                    AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+                    alertDialog.setTitle(title);
+                    alertDialog.setMessage(message);
 
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, login, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        Intent back = new Intent();
-                        setResult(Activity.RESULT_OK, back);
-                        db.close();
-                        finish();
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, login, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            Intent back = new Intent();
+                            setResult(Activity.RESULT_OK, back);
+                            db.close();
+                            finish();
+                        }
+                    });
+                    alertDialog.show();
+                    alertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(Color.parseColor("#1e7888"));
+
+                    try {
+                        TextView messageTextView = alertDialog.findViewById(android.R.id.message);
+                        Typeface lato = Typeface.createFromAsset(getAssets(), "fonts/Lato-Regular.ttf");
+                        messageTextView.setTypeface(lato);
+
+                        TextView titleTextView = (TextView) alertDialog.findViewById(R.id.alertTitle);
+                        titleTextView.setTypeface(lato);
+                    } catch (NullPointerException e) {
                     }
-                });
-                alertDialog.show();
-                alertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(Color.parseColor("#1e7888"));
-
-                try {
-                    TextView messageTextView = alertDialog.findViewById(android.R.id.message);
-                    Typeface lato = Typeface.createFromAsset(getAssets(), "fonts/Lato-Regular.ttf");
-                    messageTextView.setTypeface(lato);
-
-                    TextView titleTextView = (TextView) alertDialog.findViewById(R.id.alertTitle);
-                    titleTextView.setTypeface(lato);
-                } catch (NullPointerException e) {
                 }
-            }
 
+            }
         }
     }
 
