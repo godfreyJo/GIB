@@ -36,10 +36,10 @@ public class employee_login extends AppCompatActivity implements View.OnClickLis
         EditText employeeNoText = (EditText)findViewById(R.id.employee_login_number);
         EditText passwordText   = (EditText)findViewById(R.id.employee_login_password);
 
-        String employeNoString  = employeeNoText.getText().toString().toString();
+        String employeeNoString  = employeeNoText.getText().toString().toString();
         String passwordString   = passwordText.getText().toString();
 
-        if(employeNoString.length()==0||passwordString.length()==0)
+        if(employeeNoString.length()==0||passwordString.length()==0)
         {
             customToast("Please enter in your credentials!!");
         }
@@ -47,7 +47,7 @@ public class employee_login extends AppCompatActivity implements View.OnClickLis
             {
                 try
                 {
-                    int employeeNo  = Integer.parseInt(employeNoString);
+                    int employeeNo  = Integer.parseInt(employeeNoString);
                     try {
                         Employee employee = db.selectEmployee(employeeNo);
 

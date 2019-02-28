@@ -49,7 +49,6 @@ public class employee_home extends AppCompatActivity implements View.OnClickList
                 Intent resetPAC = new Intent(this, employee_home_resetpac.class);
                 startActivity(resetPAC);
                 break;
-
             case R.id.logout:
                 db.close();
                 finish();

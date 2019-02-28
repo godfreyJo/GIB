@@ -46,7 +46,7 @@ public class calender extends AppCompatActivity {
 
     private void textStyles()
     {
-        
+
     }
     private void setClickListeners()
     {

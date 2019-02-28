@@ -64,6 +64,20 @@
         android:layout_alignStart="@+id/employee_login"
         android:layout_alignRight="@+id/employee_login"
         android:layout_alignEnd="@+id/employee_login" />
+    <Button
+        android:id="@+id/employee_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_page_buttons"
+        android:text="@string/employee_register"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/user_register"
+        android:layout_alignLeft="@+id/user_register"
+        android:layout_alignStart="@+id/user_register"
+        android:layout_alignRight="@+id/user_register"
+        android:layout_alignEnd="@+id/user_register" />
 
     <Button
         android:id="@+id/employee_login"
@@ -76,7 +90,7 @@
         android:textSize="15sp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_below="@+id/user_register"
+        android:layout_below="@+id/employee_register"
         android:layout_centerHorizontal="true" />
 
     
